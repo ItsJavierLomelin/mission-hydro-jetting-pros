@@ -1,0 +1,17 @@
+---
+import { business } from '../lib/site';
+import { city } from '../data/city';
+import { u } from '../lib/utils';
+const { title = city.ui.calloutTitle, text = city.ui.calloutText } = Astro.props;
+---
+<section class="callout" data-parallax-stage>
+  <div class="fx-grid-dots" data-depth="18" style="width:160px;height:160px;left:6%;top:-30px;opacity:.4" aria-hidden="true"></div>
+  <div class="fx-circle fx-ring-light fx-float-slow" data-depth="26" style="width:140px;height:140px;right:12%;bottom:-70px;opacity:.3" aria-hidden="true"></div>
+  <div class="callout-inner">
+    <div><h2>{title}</h2><p>{text}</p></div>
+    <div class="callout-buttons">
+      <a class="button-primary" href={business.phoneHref}>Call {business.phoneDisplay}</a>
+      <a class="button-soft" style="background:#262626" href={u('/contact/')}>Request service</a>
+    </div>
+  </div>
+</section>
